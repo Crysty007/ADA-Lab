@@ -1,0 +1,17 @@
+#include<stdio.h>
+void main(){
+    int n, m, count=0;
+    printf("Enter m and n: ");
+    scanf("%d%d", &m, &n);
+    while(m!=n){
+        if(m>n){
+            count++;
+            m=m-n;
+        }else{
+            count++;
+            n=n-m;
+        }
+    }
+    printf("\nGcd=%d", m);
+    printf("\nCount=%d", count);
+}
