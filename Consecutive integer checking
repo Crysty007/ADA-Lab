@@ -1,0 +1,27 @@
+#include<stdio.h>
+void main(){
+    int n, m, min=0, temp1, temp2, gcd=0, count=0;
+    printf("Enter m and n: ");
+    scanf("%d%d", &m, &n);
+    if(m>n){
+        min=n;
+    }else{
+        min=m;
+    }
+    while(m!=1){
+        count++;
+        temp1 = m%min;
+        if(temp1 == 0){
+            count++;
+            temp2= n%min;
+            if(temp2 == 0){
+                gcd=min;
+                break;
+            }
+        }
+        min = min-1;
+        gcd=min;
+    }
+    printf("\nGcd=%d", gcd);
+    printf("\nCount=%d", count);
+}
