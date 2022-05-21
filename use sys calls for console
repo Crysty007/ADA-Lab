@@ -1,0 +1,17 @@
+//To demonstrate the use of I/O system calls for console
+#include <unistd.h> //header file that provides access to the POSIX operating system API
+#include <stdio.h>
+#define BUFFER_SIZE 30
+int main() 
+{
+char buffer[BUFFER_SIZE];
+int n; 
+//read(int __fd, void *__buf, size_t __nbytes)
+//write(int __fd, const void *__buf, size_t __n)
+//fd-file descriptor; buf-buffer to read data from; nbytes-length of buffer; n- number of bytes read on success
+  printf("Enter string: \n");
+n = read(0, buffer, BUFFER_SIZE); // 0 is the file discriptor for stdin
+printf("Number of characters read: %d\n", n);
+ write(1, buffer, n); // 1 is the file discriptor for stdout
+return 0;
+}
